@@ -17,17 +17,29 @@
         <span>Computer: 1</span>
       </div>
       <div id="gameboard">
-        <div class="0 cells"></div>
-        <div class="1 cells"></div>
-        <div class="2 cells"></div>
-        <div class="3 cells"></div>
-        <div class="4 cells"></div>
-        <div class="5 cells"></div>
-        <div class="6 cells"></div>
-        <div class="7 cells"></div>
-        <div class="8 cells"></div>
+        <div class="0 cells canceled"></div>
+        <div class="1 cells canceled"></div>
+        <div class="2 cells canceled"></div>
+        <div class="3 cells canceled"></div>
+        <div class="4 cells canceled"></div>
+        <div class="5 cells canceled"></div>
+        <div class="6 cells canceled"></div>
+        <div class="7 cells canceled"></div>
+        <div class="8 cells canceled"></div>
       </div>
-      <button id="start">Start</button>
+      <div id="buttons">
+        <button id="start">Start</button>
+        <button id="player">Player vs Player</button>
+        <button id="ai">player vs computer</button>
+        <button id="X">X</button>
+        <button id="O">O</button>
+        <form action="">
+          <label for="player-X">player O name</label>
+          <input type="text" id="player-X" />
+          <label for="player-O">player O name</label>
+          <input type="text" id="player-O" />
+        </form>
+      </div>
     </main>
     <script src="main.js"></script>
   </body>

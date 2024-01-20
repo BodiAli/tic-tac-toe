@@ -45,6 +45,9 @@ main {
   height: 420px;
   width: 420px;
 }
+#buttons {
+  grid-column: 1 / 4;
+}
 .cells {
   height: 100%;
   width: 100%;
