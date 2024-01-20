@@ -55,6 +55,9 @@ main {
   font-weight: bold;
   font-size: 5rem;
 }
+.canceled {
+  pointer-events: none;
+}
 #start {
   grid-column: 2 / 3;
 }
