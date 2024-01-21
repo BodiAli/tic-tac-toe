@@ -11,36 +11,41 @@
     <header>
       <h1>Tic-Tac-Toe</h1>
     </header>
-    <main>
-      <div id="stats">
-        <span>Player: 1</span>
-        <span>Computer: 1</span>
-      </div>
-      <div id="gameboard">
-        <div class="0 cells canceled"></div>
-        <div class="1 cells canceled"></div>
-        <div class="2 cells canceled"></div>
-        <div class="3 cells canceled"></div>
-        <div class="4 cells canceled"></div>
-        <div class="5 cells canceled"></div>
-        <div class="6 cells canceled"></div>
-        <div class="7 cells canceled"></div>
-        <div class="8 cells canceled"></div>
-      </div>
-      <div id="buttons">
+    <div id="container">
+      <main>
+        <div id="stats">
+          <span id="nameX">bodiasdasd:</span>
+          <span id="scoreX">12</span>
+          <span id="nameY">modasdadsay:</span>
+          <span id="scoreY">13</span>
+        </div>
+        <div id="black"></div>
+        <div id="gameboard">
+          <div class="0 cells canceled"></div>
+          <div class="1 cells canceled"></div>
+          <div class="2 cells canceled"></div>
+          <div class="3 cells canceled"></div>
+          <div class="4 cells canceled"></div>
+          <div class="5 cells canceled"></div>
+          <div class="6 cells canceled"></div>
+          <div class="7 cells canceled"></div>
+          <div class="8 cells canceled"></div>
+        </div>
+
         <button id="start">Start</button>
-        <button id="player">Player vs Player</button>
-        <button id="ai">player vs computer</button>
-        <button id="X">X</button>
-        <button id="O">O</button>
-        <form action="">
-          <label for="player-X">player O name</label>
-          <input type="text" id="player-X" />
-          <label for="player-O">player O name</label>
-          <input type="text" id="player-O" />
-        </form>
+      </main>
+      <div id="gameButtons">
+        <button class="styling remove1" id="player">Player vs Player</button>
+        <button class="styling remove1" id="ai">player vs computer</button>
+        <label class="remove1" id="playerXLabel" for="player-X">player X name</label>
+        <input class="styling remove1" type="text" id="player-X" />
+        <label class="remove1" id="playerYLabel" for="player-O">player O name</label>
+        <input class="styling remove1" type="text" id="player-O" />
+        <button class="styling remove2" id="X">X</button>
+        <button class="styling remove2" id="O">O</button>
+        <button class="styling remove1" id="restart">Restart</button>
       </div>
-    </main>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

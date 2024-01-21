@@ -28,12 +28,26 @@ main {
 }
 #stats {
   grid-column: 1 / 4;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
   width: 80%;
   font-size: 1.5rem;
+  gap: 10px;
+  justify-items: center;
 }
-
+#nameX {
+  justify-self: end;
+}
+#nameY {
+  justify-self: end;
+}
+#scoreX {
+  justify-self: start;
+}
+#scoreY {
+  justify-self: start;
+}
 #gameboard {
   grid-column: 1 / 4;
   display: grid;
@@ -45,8 +59,38 @@ main {
   height: 420px;
   width: 420px;
 }
-#buttons {
-  grid-column: 1 / 4;
+#container {
+  display: flex;
+}
+#gameButtons {
+  display: grid;
+  width: 40%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 15px;
+}
+.styling {
+  width: 100px;
+  height: 40px;
+}
+#player {
+  grid-column: 1 / 3;
+}
+#ai {
+  grid-column: 3 / 5;
+}
+#X {
+}
+#O {
+}
+#player-X {
+}
+#player-O {
+}
+#restart {
+  grid-column: 3 / 5;
 }
 .cells {
   height: 100%;
@@ -63,4 +107,48 @@ main {
 }
 #start {
   grid-column: 2 / 3;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hiding {
+  animation: fadeIn 2s ease-out;
+}
+.fade-out {
+  animation: fadeOut 2s ease-out;
+}
+.text-fade {
+  animation: fadeIn 1s ease-in;
+}
+#black {
+  width: 420px;
+  height: 420px;
+  background-color: black;
+  position: absolute;
+}
+.remove1 {
+  visibility: hidden;
+}
+.remove2 {
+  visibility: hidden;
+}
+.remove {
+  visibility: hidden;
+}
+.add {
+  visibility: visible;
 }
