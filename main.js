@@ -43,8 +43,8 @@ const black = document.getElementById("black")
     
     render: function(ev){
       if(this.playerVsComputerClicked === true){
-      
       this.generateComputerChoice(ev)
+      
       for (let i = 0; i < 10; i++){
         
         if (this.gameBoard[i] === "X" || this.gameBoard[i] === "O"){
@@ -113,7 +113,6 @@ const black = document.getElementById("black")
 
     },
     addMarker: function(ev){
-      this.cells[0].classList.add("text-fade")
     this.gameBoard[0] = this.cells[0].textContent
     this.gameBoard[1] = this.cells[1].textContent
 
@@ -503,3 +502,11 @@ addPlayerVsComputerStats: function(ev){
 }
 
 Stats.init()
+
+
+function test(a, b){
+  const res = a + b
+  console.log(res)
+}
+
+setTimeout(test, 1000, 2, 4)
