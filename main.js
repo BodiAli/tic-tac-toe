@@ -511,11 +511,3 @@ addPlayerVsComputerStats: function(ev){
 }
 
 Stats.init()
-
-
-function test(a, b){
-  const res = a + b
-  console.log(res)
-}
-
-setTimeout(test, 1000, 2, 4)
