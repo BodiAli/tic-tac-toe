@@ -229,7 +229,7 @@ main {
 .cells {
   height: 100%;
   width: 100%;
-  border: 1px solid #5b63b7;
+  border: 3px solid #5b63b7;
   display: flex;
   align-items: center;
   justify-content: center;
