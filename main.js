@@ -463,6 +463,7 @@ const black = document.getElementById("black")
     if ((this.playerVsComputerClicked === true) && (this.computer.marker === "X")){
       this.gameBoard[4] = "X"
     }
+    this.turn = true
     this.resultStat.textContent = ""
     this.render(ev)
    }
