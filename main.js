@@ -32,6 +32,7 @@ const black = document.getElementById("black")
       this.playerXScore = document.getElementById("scoreX")
       this.playerYScore = document.getElementById("scoreY")   
       this.restartButton = document.getElementById("restart")
+      this.resultStat = document.getElementById("result")
     },
     bindEvents: function(){
       this.cells.forEach(function(element){
@@ -77,15 +78,21 @@ const black = document.getElementById("black")
         }
         
         else {
-          this.cells[0].textContent = this.gameBoard[0]
-          this.cells[1].textContent = this.gameBoard[1]
-          this.cells[2].textContent = this.gameBoard[2]
-          this.cells[3].textContent = this.gameBoard[3]
-          this.cells[4].textContent = this.gameBoard[4]
-          this.cells[5].textContent = this.gameBoard[5]
-          this.cells[6].textContent = this.gameBoard[6]
-          this.cells[7].textContent = this.gameBoard[7]
-          this.cells[8].textContent = this.gameBoard[8]
+          for(let i = 0; i < this.gameBoard.length; i++){
+            if(this.computer.marker === "O" && this.gameBoard[i] === "O"){
+              setTimeout(function(){
+                this.cells[i].textContent = this.gameBoard[i]
+              }.bind(this), 200)
+            }else if (this.computer.marker === "X" && this.gameBoard[i] === "X"){
+              setTimeout(function(){
+                this.cells[i].textContent = this.gameBoard[i]
+              }.bind(this), 200)
+            }else {
+              this.cells[i].textContent = this.gameBoard[i]
+            } 
+
+          }
+        
         }
       }
       this.checkWinPlayerVsComputer(ev)
@@ -114,6 +121,7 @@ const black = document.getElementById("black")
     },
     addMarker: function(ev){
     this.gameBoard[0] = this.cells[0].textContent
+    
     this.gameBoard[1] = this.cells[1].textContent
 
     this.gameBoard[2] = this.cells[2].textContent
@@ -237,7 +245,7 @@ const black = document.getElementById("black")
           this.gameBoard[6] === "X" && this.gameBoard[7] === "X" && this.gameBoard[8] === "X" ||
           this.gameBoard[3] === "X" && this.gameBoard[4] === "X" && this.gameBoard[5] === "X"
         ){
-          console.log("You Won")
+          this.resultStat.textContent = "You Won!"
           
           this.playerXScore.textContent = +this.playerXScore.textContent + 1
           this.cells.forEach(this.stopBoardClick)
@@ -252,13 +260,13 @@ const black = document.getElementById("black")
           this.gameBoard[3] === "O" && this.gameBoard[4] === "O" && this.gameBoard[5] === "O"
           
           ) {
-          console.log("Computer Won")
+            this.resultStat.textContent = "Computer Won!"
           this.playerYScore.textContent = +this.playerYScore.textContent + 1
           this.cells.forEach(this.stopBoardClick)
         } else if (this.gameBoard.every(function(element){
           return element !== ""
         })){
-            console.log("It's a draw!")
+          this.resultStat.textContent = "It's A Draw!"
             this.cells.forEach(this.stopBoardClick)
           }
       } else if (this.player.marker === "O"){
@@ -272,7 +280,7 @@ const black = document.getElementById("black")
           this.gameBoard[6] === "O" && this.gameBoard[7] === "O" && this.gameBoard[8] === "O" ||
           this.gameBoard[3] === "O" && this.gameBoard[4] === "O" && this.gameBoard[5] === "O"
         ){
-          console.log("You Won")
+          this.resultStat.textContent = "You Won!"
           this.playerXScore.textContent = +this.playerXScore.textContent + 1
           this.cells.forEach(this.stopBoardClick)
         } else if (
@@ -286,13 +294,13 @@ const black = document.getElementById("black")
           this.gameBoard[3] === "X" && this.gameBoard[4] === "X" && this.gameBoard[5] === "X"
     
         ) {
-          console.log("Computer Won")
+          this.resultStat.textContent = "Computer Won!"
           this.playerYScore.textContent = +this.playerYScore.textContent + 1
           this.cells.forEach(this.stopBoardClick)
         } else if (this.gameBoard.every(function(element){
           return element !== ""
         })){
-            console.log("It's a draw!")
+            this.resultStat.textContent = "It's A Draw!"
             this.cells.forEach(this.stopBoardClick)
           }
       }
@@ -311,7 +319,7 @@ const black = document.getElementById("black")
         this.gameBoard[3] === "X" && this.gameBoard[4] === "X" && this.gameBoard[5] === "X"
       ){
         this.increaseWinning()
-        console.log(`${this.playerX.name} won`)
+        this.resultStat.textContent = `${this.playerX.name} won!`
         this.playerXScore.textContent = +this.playerXScore.textContent + 1
         this.cells.forEach(this.stopBoardClick)
       } else if (
@@ -325,13 +333,13 @@ const black = document.getElementById("black")
         this.gameBoard[3] === "O" && this.gameBoard[4] === "O" && this.gameBoard[5] === "O"
   
       ) {
-        console.log(`${this.playerO.name} won`)
+        this.resultStat.textContent = `${this.playerO.name} won`
         this.playerYScore.textContent = +this.playerYScore.textContent + 1
         this.cells.forEach(this.stopBoardClick)
       } else if (this.gameBoard.every(function(element){
         return element !== ""
       })){
-          console.log("It's a draw!")
+        this.resultStat.textContent = "It's A Draw!"
           this.cells.forEach(this.stopBoardClick)
         }
     
@@ -455,6 +463,7 @@ const black = document.getElementById("black")
     if ((this.playerVsComputerClicked === true) && (this.computer.marker === "X")){
       this.gameBoard[4] = "X"
     }
+    this.resultStat.textContent = ""
     this.render(ev)
    }
   }

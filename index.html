@@ -10,16 +10,18 @@
   <body>
     <header>
       <h1>Tic-Tac-Toe</h1>
+      <span>By BodiAli</span>
     </header>
     <div id="container">
       <main>
         <div id="stats">
-          <span id="nameX">test:</span>
-          <span id="scoreX">12</span>
-          <span id="nameY">test2:</span>
-          <span id="scoreY">13</span>
+          <span id="nameX"></span>
+          <span id="scoreX"></span>
+          <span id="result"></span>
+          <span id="nameY"></span>
+          <span id="scoreY"></span>
         </div>
-        <div id="black"></div>
+        <div id="black">Press Start!</div>
         <div id="gameboard">
           <div class="0 cells canceled"></div>
           <div class="1 cells canceled"></div>
@@ -36,10 +38,10 @@
       </main>
       <div id="gameButtons">
         <button class="styling remove1" id="player">Player vs Player</button>
-        <button class="styling remove1" id="ai">player vs computer</button>
-        <label class="remove1" id="playerXLabel" for="player-X">player X name</label>
+        <button class="styling remove1" id="ai">Player vs Computer</button>
+        <label class="remove1" id="playerXLabel" for="player-X">Player X name:</label>
         <input class="styling remove1" type="text" id="player-X" />
-        <label class="remove1" id="playerYLabel" for="player-O">player O name</label>
+        <label class="remove1" id="playerYLabel" for="player-O">Player O name:</label>
         <input class="styling remove1" type="text" id="player-O" />
         <button class="styling remove2" id="X">X</button>
         <button class="styling remove2" id="O">O</button>
