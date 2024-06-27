@@ -320,3 +320,47 @@ main {
 .add {
   visibility: visible;
 }
+
+@media (max-width: 700px) {
+  #container {
+    flex-direction: column;
+  }
+
+  main {
+    width: auto;
+  }
+
+  #gameboard,
+  #black {
+    width: 250px;
+    height: 250px;
+  }
+
+  span {
+    font-size: 1rem !important;
+  }
+
+  .cells {
+    font-size: 3rem;
+  }
+
+  #player,
+  #ai {
+    width: 30%;
+  }
+
+  #gameButtons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+
+  .styling {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
